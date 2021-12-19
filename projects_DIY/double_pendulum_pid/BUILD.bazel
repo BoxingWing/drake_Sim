@@ -14,15 +14,42 @@ drake_cc_binary(
         "//tools:drake_visualizer",
     ],
     deps = [
+        "//common:essential",
         "//common:find_resource",
         "//common:add_text_logging_gflags",
         "//geometry:drake_visualizer",
         "//lcm",
         "//multibody/parsing",
         "//multibody/plant",
-        "//systems/analysis:simulator",
-        "//systems/framework:diagram",
-        "@gflags"
+        "//systems/analysis",
+        "//systems/framework",
+        "@sdformat",
+        "@gflags",
+    ],
+)
+
+
+drake_cc_binary(
+    name = "pidCtr",
+    srcs = [
+        "pidCtr.cc",
+    ],
+    data = [
+        ":models",
+        "//tools:drake_visualizer",
+    ],
+    deps = [
+        "//common:essential",
+        "//common:find_resource",
+        "//common:add_text_logging_gflags",
+        "//geometry:drake_visualizer",
+        "//lcm",
+        "//multibody/parsing",
+        "//multibody/plant",
+        "//systems/analysis",
+        "//systems/controllers",
+        "//systems/framework",
+        "@sdformat",
     ],
 )
 
