@@ -50,7 +50,6 @@ INSTALLED_MODEL_PACKAGES = [
     "//examples/rimless_wheel",
     "//examples/simple_four_bar",
     "//examples/zmp",
-    "//examples/double_pendulum_pid",
 ]
 
 filegroup(
